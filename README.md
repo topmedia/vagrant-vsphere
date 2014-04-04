@@ -146,8 +146,9 @@ This is useful if running Vagrant from multiple directories or if multiple machi
   * fixes rsync error reporting
   * updates locales yaml
   * restricts rbvmomi dependency
-* 0.7.2
-  * builds with latest vagrant and ruby 2.0.0
+* 0.8.0
+  * adds cluster support
+  * now builds with vagrant > 1.5 + ruby 2.0.0
 
 
 ## Versioning
