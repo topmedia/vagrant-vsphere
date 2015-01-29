@@ -3,6 +3,7 @@ require 'vagrant'
 module VagrantPlugins
   module VSphere
     class Config < Vagrant.plugin('2', :config)
+      @@password = nil
       attr_accessor :host
       attr_accessor :insecure
       attr_accessor :user
@@ -28,7 +29,7 @@ module VagrantPlugins
         errors = _detected_errors
 
         if password == :ask || password.nil?
-          self.password = machine.ui.ask('vSphere Password (will be hidden): ', echo: false)
+          self.password = @@password ||= machine.ui.ask('vSphere Password (will be hidden): ', echo: false)
         end
 
         # TODO: add blank?
